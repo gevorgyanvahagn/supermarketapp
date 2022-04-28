@@ -15,11 +15,7 @@ struct GroceryItemView: View {
     
     var body: some View {
         HStack {
-            if let hex = groceryItem.bagColor {
-                Color(uiColor: UIColor(hex))
-                    .frame(width: 55, height: 55)
-                    .cornerRadius(27.5)
-            }
+            colorView(withHex: groceryItem.bagColor)
             VStack(alignment: .leading, spacing: 8) {
                 Text(groceryItem.name ?? "")
                     .font(.system(.title2))
@@ -33,6 +29,22 @@ struct GroceryItemView: View {
             .border(Color.gray, width: 0.5, cornerRadius: 5)
         }
         .padding(.horizontal)
+        
+    }
+}
+
+extension GroceryItemView {
+    @ViewBuilder
+    private func colorView(withHex hex: String?) -> some View {
+        Group {
+            if let hex = groceryItem.bagColor {
+                Color(uiColor: UIColor(hex))
+            } else {
+                Color.black
+            }
+        }
+        .frame(width: 55, height: 55)
+        .cornerRadius(27.5)
         
     }
 }
