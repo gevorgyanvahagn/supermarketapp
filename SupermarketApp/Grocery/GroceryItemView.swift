@@ -15,9 +15,11 @@ struct GroceryItemView: View {
     
     var body: some View {
         HStack {
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 55, height: 55)
+            if let hex = groceryItem.bagColor {
+                Color(uiColor: UIColor(hex))
+                    .frame(width: 55, height: 55)
+                    .cornerRadius(27.5)
+            }
             VStack(alignment: .leading, spacing: 8) {
                 Text(groceryItem.name ?? "")
                     .font(.system(.title2))
