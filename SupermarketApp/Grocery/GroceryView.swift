@@ -19,7 +19,7 @@ struct GroceryView: View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.groceryItems, id: \.self) { groceryItem in
-                    Text(groceryItem.name ?? "Unknown")
+                    GroceryItemView(groceryItem: groceryItem)
                 }
             }
         }
