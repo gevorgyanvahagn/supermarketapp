@@ -114,7 +114,7 @@ extension GroceryView {
         private func handleGroceryItemData(_ data: Data) {
             do {
                 let groceryItem = try self.decode(data)
-                self.groceryItems.append(groceryItem)
+                self.groceryItems.insert(groceryItem, at: 0)
             } catch let error {
                 self.show(error: error)
             }
