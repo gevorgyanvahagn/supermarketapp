@@ -107,11 +107,10 @@
 		834FA0D7281A87AD00D2465D /* SupermarketApp */ = {
 			isa = PBXGroup;
 			children = (
-				834FA0D8281A87AD00D2465D /* SupermarketAppApp.swift */,
-				834FA0DA281A87AD00D2465D /* GroceryView.swift */,
-				834FA0DC281A87B000D2465D /* Assets.xcassets */,
+				834FA116281AA25E00D2465D /* Application */,
+				834FA115281AA24F00D2465D /* Grocery */,
+				834FA114281AA24500D2465D /* Resources */,
 				834FA0DE281A87B000D2465D /* Preview Content */,
-				834FA104281A96AD00D2465D /* Constants.swift */,
 			);
 			path = SupermarketApp;
 			sourceTree = "<group>";
@@ -156,6 +155,47 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		834FA114281AA24500D2465D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				834FA0DC281A87B000D2465D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		834FA115281AA24F00D2465D /* Grocery */ = {
+			isa = PBXGroup;
+			children = (
+				834FA0DA281A87AD00D2465D /* GroceryView.swift */,
+			);
+			path = Grocery;
+			sourceTree = "<group>";
+		};
+		834FA116281AA25E00D2465D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				834FA11A281AA28800D2465D /* Entry */,
+				834FA117281AA26300D2465D /* Shared */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		834FA117281AA26300D2465D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				834FA104281A96AD00D2465D /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		834FA11A281AA28800D2465D /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				834FA0D8281A87AD00D2465D /* SupermarketAppApp.swift */,
+			);
+			path = Entry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

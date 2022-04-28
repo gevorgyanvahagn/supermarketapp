@@ -23,23 +23,13 @@ struct GroceryView: View {
                 }
             }
         }
-//        VStack {
-//            Button {
-//                viewModel.connectToWebsocket()
-//            } label: {
-//                Text("Start")
-//            }
-//            Button {
-//                viewModel.disconnectFromWebsocket()
-//            } label: {
-//                Text("Stop")
-//            }
-//        }
         .showAlert($viewModel.alertItem)
     }
 }
 
 // MARK: - Suviews
+extension GroceryView {
+}
 
 // MARK: - View model
 extension GroceryView {
