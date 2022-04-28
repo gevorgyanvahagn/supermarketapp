@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		834FA0D9281A87AD00D2465D /* SupermarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA0D8281A87AD00D2465D /* SupermarketAppApp.swift */; };
-		834FA0DB281A87AD00D2465D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA0DA281A87AD00D2465D /* ContentView.swift */; };
+		834FA0DB281A87AD00D2465D /* GroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA0DA281A87AD00D2465D /* GroceryView.swift */; };
 		834FA0DD281A87B000D2465D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834FA0DC281A87B000D2465D /* Assets.xcassets */; };
 		834FA0E0281A87B000D2465D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834FA0DF281A87B000D2465D /* Preview Assets.xcassets */; };
 		834FA0EA281A87B000D2465D /* SupermarketAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA0E9281A87B000D2465D /* SupermarketAppTests.swift */; };
 		834FA0F4281A87B000D2465D /* SupermarketAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA0F3281A87B000D2465D /* SupermarketAppUITests.swift */; };
 		834FA0F6281A87B000D2465D /* SupermarketAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA0F5281A87B000D2465D /* SupermarketAppUITestsLaunchTests.swift */; };
+		834FA105281A96AD00D2465D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FA104281A96AD00D2465D /* Constants.swift */; };
+		834FA10B281A9A8300D2465D /* WebsocketClient in Frameworks */ = {isa = PBXBuildFile; productRef = 834FA10A281A9A8300D2465D /* WebsocketClient */; };
+		834FA10F281A9B5600D2465D /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 834FA10E281A9B5600D2465D /* Models */; };
+		834FA113281A9B9800D2465D /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 834FA112281A9B9800D2465D /* Core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		834FA0D5281A87AD00D2465D /* SupermarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupermarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834FA0D8281A87AD00D2465D /* SupermarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketAppApp.swift; sourceTree = "<group>"; };
-		834FA0DA281A87AD00D2465D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		834FA0DA281A87AD00D2465D /* GroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryView.swift; sourceTree = "<group>"; };
 		834FA0DC281A87B000D2465D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		834FA0DF281A87B000D2465D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		834FA0E5281A87B000D2465D /* SupermarketAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		834FA0EF281A87B000D2465D /* SupermarketAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834FA0F3281A87B000D2465D /* SupermarketAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketAppUITests.swift; sourceTree = "<group>"; };
 		834FA0F5281A87B000D2465D /* SupermarketAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		834FA104281A96AD00D2465D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		834FA108281A9A4F00D2465D /* WebsocketClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WebsocketClient; sourceTree = "<group>"; };
+		834FA10D281A9B1E00D2465D /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Models; sourceTree = "<group>"; };
+		834FA111281A9B7F00D2465D /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834FA10F281A9B5600D2465D /* Models in Frameworks */,
+				834FA10B281A9A8300D2465D /* WebsocketClient in Frameworks */,
+				834FA113281A9B9800D2465D /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +85,12 @@
 		834FA0CC281A87AD00D2465D = {
 			isa = PBXGroup;
 			children = (
+				834FA107281A9A4F00D2465D /* Packages */,
 				834FA0D7281A87AD00D2465D /* SupermarketApp */,
 				834FA0E8281A87B000D2465D /* SupermarketAppTests */,
 				834FA0F2281A87B000D2465D /* SupermarketAppUITests */,
 				834FA0D6281A87AD00D2465D /* Products */,
+				834FA109281A9A8300D2465D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,9 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				834FA0D8281A87AD00D2465D /* SupermarketAppApp.swift */,
-				834FA0DA281A87AD00D2465D /* ContentView.swift */,
+				834FA0DA281A87AD00D2465D /* GroceryView.swift */,
 				834FA0DC281A87B000D2465D /* Assets.xcassets */,
 				834FA0DE281A87B000D2465D /* Preview Content */,
+				834FA104281A96AD00D2465D /* Constants.swift */,
 			);
 			path = SupermarketApp;
 			sourceTree = "<group>";
@@ -127,6 +141,23 @@
 			path = SupermarketAppUITests;
 			sourceTree = "<group>";
 		};
+		834FA107281A9A4F00D2465D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				834FA108281A9A4F00D2465D /* WebsocketClient */,
+				834FA10D281A9B1E00D2465D /* Models */,
+				834FA111281A9B7F00D2465D /* Core */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		834FA109281A9A8300D2465D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +174,11 @@
 			dependencies = (
 			);
 			name = SupermarketApp;
+			packageProductDependencies = (
+				834FA10A281A9A8300D2465D /* WebsocketClient */,
+				834FA10E281A9B5600D2465D /* Models */,
+				834FA112281A9B9800D2465D /* Core */,
+			);
 			productName = SupermarketApp;
 			productReference = 834FA0D5281A87AD00D2465D /* SupermarketApp.app */;
 			productType = "com.apple.product-type.application";
@@ -257,8 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				834FA0DB281A87AD00D2465D /* ContentView.swift in Sources */,
+				834FA0DB281A87AD00D2465D /* GroceryView.swift in Sources */,
 				834FA0D9281A87AD00D2465D /* SupermarketAppApp.swift in Sources */,
+				834FA105281A96AD00D2465D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +620,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		834FA10A281A9A8300D2465D /* WebsocketClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WebsocketClient;
+		};
+		834FA10E281A9B5600D2465D /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		834FA112281A9B9800D2465D /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 834FA0CD281A87AD00D2465D /* Project object */;
 }
