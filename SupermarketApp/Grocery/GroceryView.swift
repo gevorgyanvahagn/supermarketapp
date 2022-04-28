@@ -87,6 +87,7 @@ extension GroceryView {
         private func disconnectFromWebsocket() {
             client.disconnect()
             isAvtive = false
+            groupByColor()
         }
         
         private func bind() {
@@ -105,6 +106,14 @@ extension GroceryView {
                 }
             }
             .store(in: &subscriptions)
+        }
+        
+        private func groupByColor() {
+            let groupedGroceryItems = Dictionary(grouping: groceryItems, by: { $0.bagColor })
+            groceryItems.removeAll()
+            for (_, value) in groupedGroceryItems {
+                groceryItems.append(contentsOf: value)
+            }
         }
         
         private func decode(_ data: Data) throws -> GroceryItem {
