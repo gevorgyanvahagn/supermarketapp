@@ -27,6 +27,7 @@ struct GroceryView: View {
             }
             .showAlert($viewModel.alertItem)
             .navigationTitle(Assets.navigationTitle)
+            .navigationBarItems(trailing: statusButton)
         }
     }
 }
@@ -35,11 +36,24 @@ struct GroceryView: View {
 extension GroceryView {
     fileprivate struct Assets {
         static let navigationTitle = "Supermarket"
+        static let startButtonTitle = "Start"
+        static let stopButtonTitle = "Stop"
     }
 }
 
 // MARK: - Suviews
 extension GroceryView {
+    var statusButton: some View {
+        Button {
+            viewModel.changeStatus()
+        } label: {
+            if viewModel.isAvtive {
+                Text(Assets.stopButtonTitle)
+            } else {
+                Text(Assets.startButtonTitle)
+            }
+        }
+    }
 }
 
 // MARK: - View model
@@ -47,21 +61,32 @@ extension GroceryView {
     final class ViewModel<T: WebsocketClientProtocol>: BaseViewModel {
         
         @Published fileprivate var groceryItems = [GroceryItem]()
+        @Published fileprivate var isAvtive = false
         private var client: T
         
         init(client: T) {
             self.client = client
             super.init()
-            client.connect()
+            connectToWebsocket()
             bind()
         }
         
-        func connectToWebsocket() {
-            client.connect()
+        func changeStatus() {
+            if isAvtive {
+                disconnectFromWebsocket()
+            } else {
+                connectToWebsocket()
+            }
         }
         
-        func disconnectFromWebsocket() {
+        private func connectToWebsocket() {
+            client.connect()
+            isAvtive = true
+        }
+        
+        private func disconnectFromWebsocket() {
             client.disconnect()
+            isAvtive = false
         }
         
         private func bind() {
