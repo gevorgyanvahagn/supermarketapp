@@ -16,14 +16,25 @@ struct GroceryView: View {
     @StateObject private var viewModel = ViewModel(client: WebsocketClient(socketUrl: Constants.Endpoints.socketUrl))
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(viewModel.groceryItems, id: \.self) { groceryItem in
-                    GroceryItemView(groceryItem: groceryItem)
+        NavigationView {
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.groceryItems, id: \.self) { groceryItem in
+                        GroceryItemView(groceryItem: groceryItem)
+                    }
+                    .padding(.top)
                 }
             }
+            .showAlert($viewModel.alertItem)
+            .navigationTitle(Assets.navigationTitle)
         }
-        .showAlert($viewModel.alertItem)
+    }
+}
+
+// MARK: - Assets
+extension GroceryView {
+    fileprivate struct Assets {
+        static let navigationTitle = "Supermarket"
     }
 }
 
